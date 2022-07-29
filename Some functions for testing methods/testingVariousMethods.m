@@ -21,8 +21,8 @@ datos(4,1:2) = [x_s,k_s];
 % I save the values ​​for false position
 [x_pf, k_pf] = falsePosition(@g, a, b, tol, iterMax);
 datos(5,1:2) = [x_pf,k_pf];
-tabla_datos = table(["Bisección";"Punto fijo";"Newton";"Secante";"Posición falsa"], int32(datos(:,2)), datos(:,1));
-tabla_datos.Properties.VariableNames = ["Metodo","Iteración","Aproximación"];
+tabla_datos = table(["Bisection";"Fixed point";"Newton";"Secant";"False Position"], int32(datos(:,2)), datos(:,1));
+tabla_datos.Properties.VariableNames = ["Method","Itr","Aprox"];
 % tabla con los datos finales
 tabla_datos
 
