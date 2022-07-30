@@ -1,0 +1,20 @@
+clc, clear all
+format rat
+% Ingresar los puntos
+x = [-1, -0.78, -0.56, -0.33, -0.11, 0.11, 0.33, 0.56, 0.78, 1];
+y = [0.04, 0.06, 0.11, 0.26, 0.76, 0.76, 0.26, 0.11, 0.06, 0.04];
+z = [0.07, 0.15, 0.37, 1.17, 3.24,-3.24,-1.17,-0.37,-0.15,-0.07];
+
+Hermite(x,y,z,2)
+Hermite(x,y,z,3)
+Hermite(x,y,z,4)
+Hermite(x,y,z,0.5)
+t=linspace(-1,1,100);
+r=1:100;
+for i=1:100
+r(i)=Hermite(x,y,z,t(i));
+end
+
+plot(t,r)
+hold on
+plot (x,y,'ro')
